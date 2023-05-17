@@ -1,0 +1,19 @@
+version: '3'
+services:
+  node-app :
+    container_name: node-app-container 
+    build: .
+    volumes:
+      - ./:/app 
+    ports:
+      - "5000:5000"
+    
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+
+
